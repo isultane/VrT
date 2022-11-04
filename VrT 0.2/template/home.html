@@ -1,0 +1,1725 @@
+<!DOCTYPE html>
+<html lang="en">
+
+  <head>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+
+    <title>Vulnerabilities Reports Tagger</title>
+
+    <!-- Bootstrap core CSS -->
+    <link   rel="stylesheet" href="{{ url_for('static',filename='bootstrap.min.css')}}"/>
+
+
+    <!-- Additional CSS Files -->
+    <script
+          src="https://code.jquery.com/jquery-3.2.1.min.js"
+          integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4="
+          crossorigin="anonymous"></script>
+
+    <link rel="stylesheet" href="{{ url_for('static',filename='fontawesome.css')}}"/>
+    <link rel="stylesheet" href="{{ url_for('static',filename='templatemo-digimedia-v3.css')}}"/>
+    <link rel="stylesheet" href="{{ url_for('static',filename='animated.css')}}"/>
+    <link rel="stylesheet" href="{{ url_for('static',filename='owl.css')}}"/>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.5.0/Chart.min.js"></script>
+
+
+
+
+
+
+<!--
+
+TemplateMo 568 DigiMedia
+
+https://templatemo.com/tm-568-digimedia
+
+-->
+    <style>
+
+
+.ribbon {
+    position: absolute;
+        top: 0px;
+        right: 0px;
+        padding-bottom : 50px 50px;}
+
+.ribbon1 {
+    position: absolute;
+        top: 0px;
+        left: 0px;
+        padding-bottom : 50px 50px;
+
+
+
+}
+#d1{
+        width:100%;
+        height:150px;
+
+
+}
+textarea:placeholder {
+    font-size: 1rem;
+    color: #9c9c9c;
+    font-family: 'Roboto', sans-serif;
+}
+textarea{
+
+    font-size: 1rem;
+    color: black;
+
+}
+
+#d2{
+        width:100%;
+        height:400px;
+
+
+
+}
+#d3{
+        width:60%;
+        height:400px;
+        float:center;
+
+
+
+}
+table{
+
+    width:100%;
+    border: 1px solid #ccc;
+    table-layout: auto;
+}
+
+table td{
+    padding:11px;
+    background-color:white;
+    border: 1px solid #ccc;
+
+
+}
+
+table thead td{
+background-color:#89cff0;
+color:#FFF;
+font-weight:blod;
+text-align:center;
+
+}
+
+
+
+</style>
+  </head>
+
+<body>
+
+  <!-- ***** Preloader Start ***** -->
+  <div id="js-preloader" class="js-preloader">
+    <div class="preloader-inner">
+      <span class="dot"></span>
+      <div class="dots">
+        <span></span>
+        <span></span>
+        <span></span>
+      </div>
+    </div>
+  </div>
+  <!-- ***** Preloader End ***** -->
+
+
+
+  <!-- ***** Header Area Start ***** -->
+  <header class="header-area header-sticky wow slideInDown" data-wow-duration="0.75s" data-wow-delay="0s">
+    <div class="container">
+      <div class="row">
+        <div class="col-12">
+          <nav class="main-nav">
+            <!-- ***** Logo Start ***** -->
+            <a href="index.html" class="logo">
+              <img class="logo" src="{{ url_for('static',filename='images/logo2.png')}}" alt="" height=96>
+            </a>
+
+            <!-- ***** Logo End ***** -->
+            <!-- ***** Menu Start ***** -->
+            <ul class="nav">
+              <li class="scroll-to-section"><a href="#top" class="active">Home</a></li>
+              <li class="scroll-to-section"><a href="#about">About</a></li>
+              <li class="scroll-to-section"><a href="#services">Analysis</a></li>
+              <li class="scroll-to-section"><a href="#portfolio">Results</a></li>
+              <li class="scroll-to-section"><a href="mailto:webmaster@example.com">Contact</a></li>
+              <li class="scroll-to-section"><div class="border-first-button"><a href="#d8">Get started</a></div></li>
+            </ul>        
+            <a class='menu-trigger'>
+                <span>Menu</span>
+            </a>
+            <!-- ***** Menu End ***** -->
+          </nav>
+        </div>
+      </div>
+    </div>
+  </header>
+  <!-- ***** Header Area End ***** -->
+
+  <div class="main-banner wow fadeIn" id="top" data-wow-duration="1s" data-wow-delay="0.5s">
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-12">
+          <div class="row">
+            <div class="col-lg-6 align-self-center">
+              <div class="left-content show-up header-text wow fadeInLeft" data-wow-duration="1s" data-wow-delay="1s">
+                <div class="row">
+                  <div class="col-lg-12">
+                    <h6>Vulnerabilities Reports Tagger</h6>
+                    <h2>Machine Learning Driven Cybersecurity text Classification</h2>
+                    <h5>Vulnerability classification service in an instant and fast manner by reading the vulnerability description</h5>
+                    <br>
+                  </div>
+                  <div class="col-lg-12">
+                    <div class="border-first-button scroll-to-section">
+                      <a href="#d8">Get started to try the service</a>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="col-lg-6">
+              <div class="right-image wow fadeInRight" data-wow-duration="1s" data-wow-delay="0.5s">
+                <img src="{{ url_for('static',filename='images/tag.png')}}" alt="">
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div id="about" class="about section">
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-12">
+          <div class="row">
+            <div class="col-lg-6">
+              <div class="about-left-image  wow fadeInLeft" data-wow-duration="1s" data-wow-delay="0.5s">
+                <img src="{{ url_for('static',filename='assets/images/about-dec-v3.png')}}" alt="">
+              </div>
+            </div>
+            <div class="col-lg-6 align-self-center  wow fadeInRight" data-wow-duration="1s" data-wow-delay="0.5s">
+              <div class="about-right-content">
+                <div class="section-heading">
+                  <h6>About Us</h6>
+                  <h4><em>what</em> is VrT ?</h4>
+                  <div class="line-dec"></div>
+                </div>
+                <br>
+                <h5>Tool to automatically label text from several data sources.</h5>
+                <br>
+                <div class="section-heading">
+                  <h4><em>How ?</em> </h4>
+                  <div class="line-dec"></div>
+                </div>
+                <br>
+                <h5>By leveraging machine learning strategies on vulnerabilities description and domain-specific.</h5>
+                <br>
+                <div class="section-heading">
+                  <h4><em>Why ?</em> </h4>
+                  <div class="line-dec"></div>
+                </div>
+                <br>
+                <h5>To help software security engineers in analyzing timely software vulnerabilities information.</h5>
+                <br>
+                 <div class="section-heading">
+                  <h4><em>Our accuracy</em> </h4>
+                  <div class="line-dec"></div>
+                </div>
+                <p></p>
+
+                <div class="row">
+                  <div class="col-lg-4 col-sm-4">
+                    <div class="skill-item first-skill-item wow fadeIn" data-wow-duration="1s" data-wow-delay="0s">
+                      <div class="progress" data-percentage="90">
+                        <span class="progress-left">
+                          <span class="progress-bar"></span>
+                        </span>
+                        <span class="progress-right">
+                          <span class="progress-bar"></span>
+                        </span>
+                        <div class="progress-value">
+                          <div>
+                            81.6%<br>
+                            <h5>precision</h5>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="col-lg-4 col-sm-4">
+                    <div class="skill-item second-skill-item wow fadeIn" data-wow-duration="1s" data-wow-delay="0s">
+                      <div class="progress" data-percentage="80">
+                        <span class="progress-left">
+                          <span class="progress-bar"></span>
+                        </span>
+                        <span class="progress-right">
+                          <span class="progress-bar"></span>
+                        </span>
+                        <div class="progress-value">
+                          <div>
+                            79.7%<br>
+                            <h5>recall</h5>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="col-lg-4 col-sm-4">
+                    <div class="skill-item third-skill-item wow fadeIn" data-wow-duration="1s" data-wow-delay="0s">
+                      <div class="progress" data-percentage="70">
+                        <span class="progress-left">
+                          <span class="progress-bar"></span>
+                        </span>
+                        <span class="progress-right">
+                          <span class="progress-bar"></span>
+                        </span>
+                        <div class="progress-value">
+                          <div>
+                            78.9%<br>
+                            <h5>F-Measure</h5>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div> 
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div id="services" class="services section">
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-12">
+          <div class="section-heading  wow fadeInDown" data-wow-duration="1s" data-wow-delay="0.5s">
+            <h6>Our Analysis</h6>
+            <h4>Select the  <em>year</em> for more info</h4>
+            <div class="line-dec"></div>
+          </div>
+        </div>
+        <div class="col-lg-12">
+          <div class="naccs">
+            <div class="grid">
+              <div class="row">
+                <div class="col-lg-12">
+                  <div class="menu">
+                    <div class="first-thumb active">
+                      <div class="thumb">
+                        <span class="icon"><img src="{{ url_for('static',filename='assets/images/service-icon-01.png')}}" alt=""></span>
+                        2012
+                      </div>
+                    </div>
+
+                    <div>
+                      <div class="thumb">                 
+                        <span class="icon"><img src="{{ url_for('static',filename='assets/images/service-icon-01.png')}}" alt=""></span>
+                        2013
+                      </div>
+
+                    </div>
+
+                    <div>
+                      <div class="thumb">
+                        <span class="icon"><img src="{{ url_for('static',filename='assets/images/service-icon-01.png')}}" alt=""></span>
+                        2014
+                      </div>
+
+                    </div>
+
+                    <div>
+                      <div class="thumb">                 
+                        <span class="icon"><img src="{{ url_for('static',filename='assets/images/service-icon-01.png')}}" alt=""></span>
+                        2015
+                      </div>
+                    </div>
+                    <div>
+                      <div class="thumb">                 
+                        <span class="icon"><img src="{{ url_for('static',filename='assets/images/service-icon-01.png')}}" alt=""></span>
+                        2016
+                      </div>
+                    </div>
+                    <div class="last-thumb">
+                      <div class="thumb">                 
+                        <span class="icon"><img src="{{ url_for('static',filename='assets/images/service-icon-01.png')}}" alt=""></span>
+                        2017
+                      </div>
+                    </div>
+                     <div>
+                      <div class="thumb">
+                        <span class="icon"><img src="{{ url_for('static',filename='assets/images/service-icon-01.png')}}" alt=""></span>
+                        2018
+                      </div>
+
+                    </div>
+                     <div>
+                      <div class="thumb">
+                        <span class="icon"><img src="{{ url_for('static',filename='assets/images/service-icon-01.png')}}" alt=""></span>
+                        2019
+                      </div>
+
+                    </div>
+                     <div>
+                      <div class="thumb">
+                        <span class="icon"><img src="{{ url_for('static',filename='assets/images/service-icon-01.png')}}" alt=""></span>
+                        2020
+                      </div>
+
+                    </div>
+                     <div>
+                      <div class="thumb">
+                        <span class="icon"><img src="{{ url_for('static',filename='assets/images/service-icon-01.png')}}" alt=""></span>
+                        2021
+                      </div>
+
+                    </div>
+                     <div>
+                      <div class="thumb">
+                        <span class="icon"><img src="{{ url_for('static',filename='assets/images/service-icon-01.png')}}" alt=""></span>
+                        2022
+                      </div>
+
+                    </div>
+                  </div>
+                </div> 
+                <div class="col-lg-12">
+                  <ul class="nacc">
+                    <li class="active">
+                      <div>
+                        <div class="thumb">
+                          <div class="row">
+                            <div class="col-lg-6 align-self-center">
+                              <div class="left-text">
+                                <h4>Vulnerabilities 2012  </h4>
+                                <p>We collected the most popular and most dangerous CWE of 2012 and got</p>
+                                <div class="ticks-list"><span><i class="fa fa-check"></i> 3061 vulnerabilities</span> <span><i class="fa fa-check"></i> 25 label</span><span><i class="fa fa-check"></i> 57266 vulnerable products versions</span> </div>
+                                <p></p>
+                                    <div class="row">
+                  <div class="col-lg-4 col-sm-4">
+                    <div class="skill-item first-skill-item wow fadeIn" data-wow-duration="1s" data-wow-delay="0s">
+                      <div class="progress" data-percentage="80">
+                        <span class="progress-left">
+                          <span class="progress-bar"></span>
+                        </span>
+                        <span class="progress-right">
+                          <span class="progress-bar"></span>
+                        </span>
+                        <div class="progress-value">
+                          <div>
+                            82.8%<br>
+                            <h5>precision</h5>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="col-lg-4 col-sm-4">
+                    <div class="skill-item second-skill-item wow fadeIn" data-wow-duration="1s" data-wow-delay="0s">
+                      <div class="progress" data-percentage="80">
+                        <span class="progress-left">
+                          <span class="progress-bar"></span>
+                        </span>
+                        <span class="progress-right">
+                          <span class="progress-bar"></span>
+                        </span>
+                        <div class="progress-value">
+                          <div>
+                            80.7%<br>
+                            <h5>recall</h5>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="col-lg-4 col-sm-4">
+                    <div class="skill-item third-skill-item wow fadeIn" data-wow-duration="1s" data-wow-delay="0s">
+                      <div class="progress" data-percentage="70">
+                        <span class="progress-left">
+                          <span class="progress-bar"></span>
+                        </span>
+                        <span class="progress-right">
+                          <span class="progress-bar"></span>
+                        </span>
+                        <div class="progress-value">
+                          <div>
+                            79.6%<br>
+                            <h5>F-Measure</h5>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                              </div>
+                            </div>
+                            <div class="col-lg-6 align-self-center">
+                              <div class="right-image">
+                                <canvas id="myChart" style="width:100%;max-width:600px"></canvas>
+                               <script>
+var xValues = ["CWE-787", "CWE-79", "CWE-89", "CWE-20", "CWE-125","CWE-78", "CWE-416", "CWE-22", "CWE-352", "CWE-434","CWE-476", "CWE-502", "CWE-190", "CWE-287", "CWE-798","CWE-77", "CWE-306", "CWE-119", "CWE-276", "CWE-918","CWE-362", "CWE-400", "CWE-611", "CWE-94",];
+var yValues = [18, 839, 227, 395, 7,33,38,118,162,5,8,110,12,0,5,3,2,1,666,6,0,29,18,2,133];
+var barColors = ["blue", "blue","blue","blue","blue","blue", "blue","blue","blue","blue","blue", "blue","blue","blue","blue","blue", "blue","blue","blue","blue","blue"];
+
+new Chart("myChart", {
+  type: "bar",
+  data: {
+    labels: xValues,
+    datasets: [{
+      backgroundColor: barColors,
+      data: yValues
+    }]
+  },
+  options: {
+    legend: {display: false},
+    title: {
+      display: true,
+      text: "2012"
+    }
+  }
+});
+</script>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </li>
+                    <li>
+                      <div>
+                        <div class="thumb">
+                          <div class="row">
+                            <div class="col-lg-6 align-self-center">
+                              <div class="left-text">
+                                <h4>Vulnerabilities 2013 </h4>
+                                <p>We collected the most popular and most dangerous CWE of 2013 and got</p>
+                                <div class="ticks-list"><span><i class="fa fa-check"></i> 3373 vulnerabilities</span> <span><i class="fa fa-check"></i> 25 label</span><span><i class="fa fa-check"></i> 68127 vulnerable products versions</span> </div>
+                                <p></p>
+                                    <div class="row">
+                  <div class="col-lg-4 col-sm-4">
+                    <div class="skill-item first-skill-item wow fadeIn" data-wow-duration="1s" data-wow-delay="0s">
+                      <div class="progress" data-percentage="80">
+                        <span class="progress-left">
+                          <span class="progress-bar"></span>
+                        </span>
+                        <span class="progress-right">
+                          <span class="progress-bar"></span>
+                        </span>
+                        <div class="progress-value">
+                          <div>
+                            80.4%<br>
+                            <span>precision</span>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="col-lg-4 col-sm-4">
+                    <div class="skill-item second-skill-item wow fadeIn" data-wow-duration="1s" data-wow-delay="0s">
+                      <div class="progress" data-percentage="80">
+                        <span class="progress-left">
+                          <span class="progress-bar"></span>
+                        </span>
+                        <span class="progress-right">
+                          <span class="progress-bar"></span>
+                        </span>
+                        <div class="progress-value">
+                          <div>
+                            77.7%<br>
+                            <span>recall</span>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="col-lg-4 col-sm-4">
+                    <div class="skill-item third-skill-item wow fadeIn" data-wow-duration="1s" data-wow-delay="0s">
+                      <div class="progress" data-percentage="70">
+                        <span class="progress-left">
+                          <span class="progress-bar"></span>
+                        </span>
+                        <span class="progress-right">
+                          <span class="progress-bar"></span>
+                        </span>
+                        <div class="progress-value">
+                          <div>
+                            75.9%<br>
+                            <span>F-Measure</span>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                              </div>
+                            </div>
+                            <div class="col-lg-6 align-self-center">
+                              <div class="right-image">
+                                            <canvas id="myChart1" style="width:100%;max-width:600px"></canvas>
+                               <script>
+var xValues = ["CWE-787", "CWE-79", "CWE-89", "CWE-20", "CWE-125","CWE-78", "CWE-416", "CWE-22", "CWE-352", "CWE-434","CWE-476", "CWE-502", "CWE-190", "CWE-287", "CWE-798","CWE-77", "CWE-306", "CWE-119", "CWE-276", "CWE-918","CWE-362", "CWE-400", "CWE-611", "CWE-94",];
+var yValues = [24, 792, 182, 557, 6,43,39,143,192,11,8,3,12,164,11,2,8,1,761,5,1,62,11,5,167];
+var barColors = ["blue", "blue","blue","blue","blue","blue", "blue","blue","blue","blue","blue", "blue","blue","blue","blue","blue", "blue","blue","blue","blue","blue"];
+
+new Chart("myChart1", {
+  type: "bar",
+  data: {
+    labels: xValues,
+    datasets: [{
+      backgroundColor: barColors,
+      data: yValues
+    }]
+  },
+  options: {
+    legend: {display: false},
+    title: {
+      display: true,
+      text: "2013"
+    }
+  }
+});
+</script>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </li>
+                    <li><div>
+                        <div class="thumb">
+                          <div class="row">
+                            <div class="col-lg-6 align-self-center">
+                              <div class="left-text">
+                                <h4>Vulnerabilities 2014 </h4>
+                                <p>We collected the most popular and most dangerous CWE of 2014 and got</p>
+                                <div class="ticks-list"><span><i class="fa fa-check"></i> 4073 vulnerabilities</span> <span><i class="fa fa-check"></i> 25 label</span><span><i class="fa fa-check"></i> 40890 vulnerable products versions</span> </div>
+                                <p></p>
+                                    <div class="row">
+                  <div class="col-lg-4 col-sm-4">
+                    <div class="skill-item first-skill-item wow fadeIn" data-wow-duration="1s" data-wow-delay="0s">
+                      <div class="progress" data-percentage="80">
+                        <span class="progress-left">
+                          <span class="progress-bar"></span>
+                        </span>
+                        <span class="progress-right">
+                          <span class="progress-bar"></span>
+                        </span>
+                        <div class="progress-value">
+                          <div>
+                            81.2%<br>
+                            <span>precision</span>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="col-lg-4 col-sm-4">
+                    <div class="skill-item second-skill-item wow fadeIn" data-wow-duration="1s" data-wow-delay="0s">
+                      <div class="progress" data-percentage="80">
+                        <span class="progress-left">
+                          <span class="progress-bar"></span>
+                        </span>
+                        <span class="progress-right">
+                          <span class="progress-bar"></span>
+                        </span>
+                        <div class="progress-value">
+                          <div>
+                            78.4%<br>
+                            <span>recall</span>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="col-lg-4 col-sm-4">
+                    <div class="skill-item third-skill-item wow fadeIn" data-wow-duration="1s" data-wow-delay="0s">
+                      <div class="progress" data-percentage="80">
+                        <span class="progress-left">
+                          <span class="progress-bar"></span>
+                        </span>
+                        <span class="progress-right">
+                          <span class="progress-bar"></span>
+                        </span>
+                        <div class="progress-value">
+                          <div>
+                            77.3%<br>
+                            <span>F-Measure</span>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                              </div>
+                            </div>
+                            <div class="col-lg-6 align-self-center">
+                              <div class="right-image">
+                                                         <canvas id="myChart2" style="width:100%;max-width:600px"></canvas>
+                               <script>
+var xValues = ["CWE-787", "CWE-79", "CWE-89", "CWE-20", "CWE-125","CWE-78", "CWE-416", "CWE-22", "CWE-352", "CWE-434","CWE-476", "CWE-502", "CWE-190", "CWE-287", "CWE-798","CWE-77", "CWE-306", "CWE-119", "CWE-276", "CWE-918","CWE-362", "CWE-400", "CWE-611", "CWE-94",];
+var yValues = [28, 1014, 288, 527, 27,47,32,209,244,13,21,5,21,137,9,0,33,3,809,0,2,0,21,17,161];
+var barColors = ["blue", "blue","blue","blue","blue","blue", "blue","blue","blue","blue","blue", "blue","blue","blue","blue","blue", "blue","blue","blue","blue","blue"];
+
+new Chart("myChart2", {
+  type: "bar",
+  data: {
+    labels: xValues,
+    datasets: [{
+      backgroundColor: barColors,
+      data: yValues
+    }]
+  },
+  options: {
+    legend: {display: false},
+    title: {
+      display: true,
+      text: "2014"
+    }
+  }
+});
+</script>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </li>
+                    <li>
+                      <div>
+                        <div class="thumb">
+                          <div class="row">
+                            <div class="col-lg-6 align-self-center">
+                              <div class="left-text">
+                                <h4>Vulnerabilities 2015 </h4>
+                                <p>We collected the most popular and most dangerous CWE of 2015 and got</p>
+                                <div class="ticks-list"><span><i class="fa fa-check"></i> 4474 vulnerabilities</span> <span><i class="fa fa-check"></i> 25 label</span><span><i class="fa fa-check"></i> 26469 vulnerable products versions</span> </div>
+                                <p></p>
+                                    <div class="row">
+                  <div class="col-lg-4 col-sm-4">
+                    <div class="skill-item first-skill-item wow fadeIn" data-wow-duration="1s" data-wow-delay="0s">
+                      <div class="progress" data-percentage="90">
+                        <span class="progress-left">
+                          <span class="progress-bar"></span>
+                        </span>
+                        <span class="progress-right">
+                          <span class="progress-bar"></span>
+                        </span>
+                        <div class="progress-value">
+                          <div>
+                            84.4%<br>
+                            <span>precision</span>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="col-lg-4 col-sm-4">
+                    <div class="skill-item second-skill-item wow fadeIn" data-wow-duration="1s" data-wow-delay="0s">
+                      <div class="progress" data-percentage="80">
+                        <span class="progress-left">
+                          <span class="progress-bar"></span>
+                        </span>
+                        <span class="progress-right">
+                          <span class="progress-bar"></span>
+                        </span>
+                        <div class="progress-value">
+                          <div>
+                            82.8%<br>
+                            <span>recall</span>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="col-lg-4 col-sm-4">
+                    <div class="skill-item third-skill-item wow fadeIn" data-wow-duration="1s" data-wow-delay="0s">
+                      <div class="progress" data-percentage="80">
+                        <span class="progress-left">
+                          <span class="progress-bar"></span>
+                        </span>
+                        <span class="progress-right">
+                          <span class="progress-bar"></span>
+                        </span>
+                        <div class="progress-value">
+                          <div>
+                            81.3%<br>
+                            <span>F-Measure</span>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                              </div>
+                            </div>
+                            <div class="col-lg-6 align-self-center">
+                              <div class="right-image">
+                                                                  <canvas id="myChart3" style="width:100%;max-width:600px"></canvas>
+                               <script>
+var xValues = ["CWE-787", "CWE-79", "CWE-89", "CWE-20", "CWE-125","CWE-78", "CWE-416", "CWE-22", "CWE-352", "CWE-434","CWE-476", "CWE-502", "CWE-190", "CWE-287", "CWE-798","CWE-77", "CWE-306", "CWE-119", "CWE-276", "CWE-918","CWE-362", "CWE-400", "CWE-611", "CWE-94",];
+var yValues = [36, 941, 271, 556, 33,47,50,184,278,31,62,4,38,54,10,3,56,3,1106,6,2,70,13,17,60];
+var barColors = ["blue", "blue","blue","blue","blue","blue", "blue","blue","blue","blue","blue", "blue","blue","blue","blue","blue", "blue","blue","blue","blue","blue"];
+
+new Chart("myChart3", {
+  type: "bar",
+  data: {
+    labels: xValues,
+    datasets: [{
+      backgroundColor: barColors,
+      data: yValues
+    }]
+  },
+  options: {
+    legend: {display: false},
+    title: {
+      display: true,
+      text: "2015"
+    }
+  }
+});
+</script>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </li>
+                    <li>
+                      <div>
+                        <div class="thumb">
+                          <div class="row">
+                            <div class="col-lg-6 align-self-center">
+                              <div class="left-text">
+                                <h4>Vulnerabilities 2016 </h4>
+                                <p>We collected the most popular and most dangerous CWE of 2016 and got</p>
+                                <div class="ticks-list"><span><i class="fa fa-check"></i> 4937 vulnerabilities</span> <span><i class="fa fa-check"></i> 25 label</span><span><i class="fa fa-check"></i> 42270 vulnerable products versions</span> </div>
+                                <p></p>
+                                    <div class="row">
+                  <div class="col-lg-4 col-sm-4">
+                    <div class="skill-item first-skill-item wow fadeIn" data-wow-duration="1s" data-wow-delay="0s">
+                      <div class="progress" data-percentage="80">
+                        <span class="progress-left">
+                          <span class="progress-bar"></span>
+                        </span>
+                        <span class="progress-right">
+                          <span class="progress-bar"></span>
+                        </span>
+                        <div class="progress-value">
+                          <div>
+                            78.3%<br>
+                            <span>precision</span>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="col-lg-4 col-sm-4">
+                    <div class="skill-item second-skill-item wow fadeIn" data-wow-duration="1s" data-wow-delay="0s">
+                      <div class="progress" data-percentage="70">
+                        <span class="progress-left">
+                          <span class="progress-bar"></span>
+                        </span>
+                        <span class="progress-right">
+                          <span class="progress-bar"></span>
+                        </span>
+                        <div class="progress-value">
+                          <div>
+                            74.4%<br>
+                            <span>recall</span>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="col-lg-4 col-sm-4">
+                    <div class="skill-item third-skill-item wow fadeIn" data-wow-duration="1s" data-wow-delay="0s">
+                      <div class="progress" data-percentage="70">
+                        <span class="progress-left">
+                          <span class="progress-bar"></span>
+                        </span>
+                        <span class="progress-right">
+                          <span class="progress-bar"></span>
+                        </span>
+                        <div class="progress-value">
+                          <div>
+                            73.6%<br>
+                            <span>F-Measure</span>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                              </div>
+                            </div>
+                            <div class="col-lg-6 align-self-center">
+                              <div class="right-image">
+                                                                      <canvas id="myChart4" style="width:100%;max-width:600px"></canvas>
+                               <script>
+var xValues = ["CWE-787", "CWE-79", "CWE-89", "CWE-20", "CWE-125","CWE-78", "CWE-416", "CWE-22", "CWE-352", "CWE-434","CWE-476", "CWE-502", "CWE-190", "CWE-287", "CWE-798","CWE-77", "CWE-306", "CWE-119", "CWE-276", "CWE-918","CWE-362", "CWE-400", "CWE-611", "CWE-94",];
+var yValues = [97, 804, 170, 707, 198,136,170,126,184,29,147,41,130,102,40,1,67,5,0,3,13,64,44,52,38];
+var barColors = ["blue", "blue","blue","blue","blue","blue", "blue","blue","blue","blue","blue", "blue","blue","blue","blue","blue", "blue","blue","blue","blue","blue"];
+
+new Chart("myChart4", {
+  type: "bar",
+  data: {
+    labels: xValues,
+    datasets: [{
+      backgroundColor: barColors,
+      data: yValues
+    }]
+  },
+  options: {
+    legend: {display: false},
+    title: {
+      display: true,
+      text: "2016"
+    }
+  }
+});
+</script>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </li>
+                    <li>
+                    <div>
+                        <div class="thumb">
+                          <div class="row">
+                            <div class="col-lg-6 align-self-center">
+                              <div class="left-text">
+                                <h4>Vulnerabilities 2017 </h4>
+                                <p>We collected the most popular and most dangerous CWE of 2017 and got</p>
+                                <div class="ticks-list"><span><i class="fa fa-check"></i> 8987 vulnerabilities</span> <span><i class="fa fa-check"></i> 25 label</span><span><i class="fa fa-check"></i> 48509 vulnerable products versions</span> </div>
+                                <p></p>
+                                    <div class="row">
+                  <div class="col-lg-4 col-sm-4">
+                    <div class="skill-item first-skill-item wow fadeIn" data-wow-duration="1s" data-wow-delay="0s">
+                      <div class="progress" data-percentage="90">
+                        <span class="progress-left">
+                          <span class="progress-bar"></span>
+                        </span>
+                        <span class="progress-right">
+                          <span class="progress-bar"></span>
+                        </span>
+                        <div class="progress-value">
+                          <div>
+                            83.1%<br>
+                            <span>precision</span>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="col-lg-4 col-sm-4">
+                    <div class="skill-item second-skill-item wow fadeIn" data-wow-duration="1s" data-wow-delay="0s">
+                      <div class="progress" data-percentage="80">
+                        <span class="progress-left">
+                          <span class="progress-bar"></span>
+                        </span>
+                        <span class="progress-right">
+                          <span class="progress-bar"></span>
+                        </span>
+                        <div class="progress-value">
+                          <div>
+                            81.4%<br>
+                            <span>recall</span>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="col-lg-4 col-sm-4">
+                    <div class="skill-item third-skill-item wow fadeIn" data-wow-duration="1s" data-wow-delay="0s">
+                      <div class="progress" data-percentage="80">
+                        <span class="progress-left">
+                          <span class="progress-bar"></span>
+                        </span>
+                        <span class="progress-right">
+                          <span class="progress-bar"></span>
+                        </span>
+                        <div class="progress-value">
+                          <div>
+                            81%<br>
+                            <span>F-Measure</span>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                              </div>
+                            </div>
+                            <div class="col-lg-6 align-self-center">
+                              <div class="right-image">
+                                                                  <canvas id="myChart5" style="width:100%;max-width:600px"></canvas>
+                               <script>
+var xValues = ["CWE-787", "CWE-79", "CWE-89", "CWE-20", "CWE-125","CWE-78", "CWE-416", "CWE-22", "CWE-352", "CWE-434","CWE-476", "CWE-502", "CWE-190", "CWE-287", "CWE-798","CWE-77", "CWE-306", "CWE-119", "CWE-276", "CWE-918","CWE-362", "CWE-400", "CWE-611", "CWE-94",];
+var yValues = [296, 1480, 489, 1109, 695,177,328,349,276,86,308,87,222,245,102,56,69,35,2049,33,52,116,148,92,82];
+var barColors = ["blue", "blue","blue","blue","blue","blue", "blue","blue","blue","blue","blue", "blue","blue","blue","blue","blue", "blue","blue","blue","blue","blue"];
+
+new Chart("myChart5", {
+  type: "bar",
+  data: {
+    labels: xValues,
+    datasets: [{
+      backgroundColor: barColors,
+      data: yValues
+    }]
+  },
+  options: {
+    legend: {display: false},
+    title: {
+      display: true,
+      text: "2017"
+    }
+  }
+});
+</script>
+
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </li>
+                    <li>
+                    <div>
+                        <div class="thumb">
+                          <div class="row">
+                            <div class="col-lg-6 align-self-center">
+                              <div class="left-text">
+                                <h4>Vulnerabilities 2018 </h4>
+                                <p>We collected the most popular and most dangerous CWE of 2018 and got</p>
+                                <div class="ticks-list"><span><i class="fa fa-check"></i> 10423 vulnerabilities</span> <span><i class="fa fa-check"></i> 25 label</span><span><i class="fa fa-check"></i> 29805 vulnerable products versions</span> </div>
+                                <p></p>
+                                    <div class="row">
+                  <div class="col-lg-4 col-sm-4">
+                    <div class="skill-item first-skill-item wow fadeIn" data-wow-duration="1s" data-wow-delay="0s">
+                      <div class="progress" data-percentage="90">
+                        <span class="progress-left">
+                          <span class="progress-bar"></span>
+                        </span>
+                        <span class="progress-right">
+                          <span class="progress-bar"></span>
+                        </span>
+                        <div class="progress-value">
+                          <div>
+                            85.2%<br>
+                            <span>precision</span>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="col-lg-4 col-sm-4">
+                    <div class="skill-item second-skill-item wow fadeIn" data-wow-duration="1s" data-wow-delay="0s">
+                      <div class="progress" data-percentage="80">
+                        <span class="progress-left">
+                          <span class="progress-bar"></span>
+                        </span>
+                        <span class="progress-right">
+                          <span class="progress-bar"></span>
+                        </span>
+                        <div class="progress-value">
+                          <div>
+                            83.3%<br>
+                            <span>recall</span>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="col-lg-4 col-sm-4">
+                    <div class="skill-item third-skill-item wow fadeIn" data-wow-duration="1s" data-wow-delay="0s">
+                      <div class="progress" data-percentage="80">
+                        <span class="progress-left">
+                          <span class="progress-bar"></span>
+                        </span>
+                        <span class="progress-right">
+                          <span class="progress-bar"></span>
+                        </span>
+                        <div class="progress-value">
+                          <div>
+                            83.2%<br>
+                            <span>F-Measure</span>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                              </div>
+                            </div>
+                            <div class="col-lg-6 align-self-center">
+                              <div class="right-image">
+                                                                           <canvas id="myChart6" style="width:100%;max-width:600px"></canvas>
+                               <script>
+var xValues = ["CWE-787", "CWE-79", "CWE-89", "CWE-20", "CWE-125","CWE-78", "CWE-416", "CWE-22", "CWE-352", "CWE-434","CWE-476", "CWE-502", "CWE-190", "CWE-287", "CWE-798","CWE-77", "CWE-306", "CWE-119", "CWE-276", "CWE-918","CWE-362", "CWE-400", "CWE-611", "CWE-94",];
+var yValues = [922, 2083, 501, 1029, 816,381,483,425,453,169,279,103,656,281,129,73,41,44,847,19,81,94,164,178,153];
+var barColors = ["blue", "blue","blue","blue","blue","blue", "blue","blue","blue","blue","blue", "blue","blue","blue","blue","blue", "blue","blue","blue","blue","blue"];
+
+new Chart("myChart6", {
+  type: "bar",
+  data: {
+    labels: xValues,
+    datasets: [{
+      backgroundColor: barColors,
+      data: yValues
+    }]
+  },
+  options: {
+    legend: {display: false},
+    title: {
+      display: true,
+      text: "2018"
+    }
+  }
+});
+</script>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </li>
+                    <li>
+                    <div>
+                        <div class="thumb">
+                          <div class="row">
+                            <div class="col-lg-6 align-self-center">
+                              <div class="left-text">
+                                <h4>Vulnerabilities 2019 </h4>
+                                <p>We collected the most popular and most dangerous CWE of 2019 and got</p>
+                                <div class="ticks-list"><span><i class="fa fa-check"></i> 9300 vulnerabilities</span> <span><i class="fa fa-check"></i> 25 label</span><span><i class="fa fa-check"></i> 27988 vulnerable products versions</span> </div>
+                                <p></p>
+                                    <div class="row">
+                  <div class="col-lg-4 col-sm-4">
+                    <div class="skill-item first-skill-item wow fadeIn" data-wow-duration="1s" data-wow-delay="0s">
+                      <div class="progress" data-percentage="80">
+                        <span class="progress-left">
+                          <span class="progress-bar"></span>
+                        </span>
+                        <span class="progress-right">
+                          <span class="progress-bar"></span>
+                        </span>
+                        <div class="progress-value">
+                          <div>
+                            78.7%<br>
+                            <span>precision</span>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="col-lg-4 col-sm-4">
+                    <div class="skill-item second-skill-item wow fadeIn" data-wow-duration="1s" data-wow-delay="0s">
+                      <div class="progress" data-percentage="80">
+                        <span class="progress-left">
+                          <span class="progress-bar"></span>
+                        </span>
+                        <span class="progress-right">
+                          <span class="progress-bar"></span>
+                        </span>
+                        <div class="progress-value">
+                          <div>
+                            78.3%<br>
+                            <span>recall</span>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="col-lg-4 col-sm-4">
+                    <div class="skill-item third-skill-item wow fadeIn" data-wow-duration="1s" data-wow-delay="0s">
+                      <div class="progress" data-percentage="80">
+                        <span class="progress-left">
+                          <span class="progress-bar"></span>
+                        </span>
+                        <span class="progress-right">
+                          <span class="progress-bar"></span>
+                        </span>
+                        <div class="progress-value">
+                          <div>
+                            77.6%<br>
+                            <span>F-Measure</span>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                              </div>
+                            </div>
+                            <div class="col-lg-6 align-self-center">
+                              <div class="right-image">
+                                <canvas id="myChart7" style="width:100%;max-width:600px"></canvas>
+                               <script>
+var xValues = ["CWE-787", "CWE-79", "CWE-89", "CWE-20", "CWE-125","CWE-78", "CWE-416", "CWE-22", "CWE-352", "CWE-434","CWE-476", "CWE-502", "CWE-190", "CWE-287", "CWE-798","CWE-77", "CWE-306", "CWE-119", "CWE-276", "CWE-918","CWE-362", "CWE-400", "CWE-611", "CWE-94",];
+var yValues = [1398, 1787, 420, 516, 813,402,463,396,427,178,254,125,210,208,122,221,100,215,233,95,83,92,105,113,110];
+var barColors = ["blue", "blue","blue","blue","blue","blue", "blue","blue","blue","blue","blue", "blue","blue","blue","blue","blue", "blue","blue","blue","blue","blue"];
+
+new Chart("myChart7", {
+  type: "bar",
+  data: {
+    labels: xValues,
+    datasets: [{
+      backgroundColor: barColors,
+      data: yValues
+    }]
+  },
+  options: {
+    legend: {display: false},
+    title: {
+      display: true,
+      text: "2019"
+    }
+  }
+});
+</script>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </li>
+                    <li>
+                    <div>
+                        <div class="thumb">
+                          <div class="row">
+                            <div class="col-lg-6 align-self-center">
+                              <div class="left-text">
+                                <h4>Vulnerabilities 2020 </h4>
+                                <p>We collected the most popular and most dangerous CWE of 2020 and got</p>
+                                <div class="ticks-list"><span><i class="fa fa-check"></i> 10667 vulnerabilities</span> <span><i class="fa fa-check"></i> 25 label</span><span><i class="fa fa-check"></i> 46417 vulnerable products versions</span> </div>
+                                <p></p>
+                                    <div class="row">
+                  <div class="col-lg-4 col-sm-4">
+                    <div class="skill-item first-skill-item wow fadeIn" data-wow-duration="1s" data-wow-delay="0s">
+                      <div class="progress" data-percentage="80">
+                        <span class="progress-left">
+                          <span class="progress-bar"></span>
+                        </span>
+                        <span class="progress-right">
+                          <span class="progress-bar"></span>
+                        </span>
+                        <div class="progress-value">
+                          <div>
+                            78.6%<br>
+                            <span>precision</span>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="col-lg-4 col-sm-4">
+                    <div class="skill-item second-skill-item wow fadeIn" data-wow-duration="1s" data-wow-delay="0s">
+                      <div class="progress" data-percentage="80">
+                        <span class="progress-left">
+                          <span class="progress-bar"></span>
+                        </span>
+                        <span class="progress-right">
+                          <span class="progress-bar"></span>
+                        </span>
+                        <div class="progress-value">
+                          <div>
+                            77.6%<br>
+                            <span>recall</span>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="col-lg-4 col-sm-4">
+                    <div class="skill-item third-skill-item wow fadeIn" data-wow-duration="1s" data-wow-delay="0s">
+                      <div class="progress" data-percentage="80">
+                        <span class="progress-left">
+                          <span class="progress-bar"></span>
+                        </span>
+                        <span class="progress-right">
+                          <span class="progress-bar"></span>
+                        </span>
+                        <div class="progress-value">
+                          <div>
+                            76.9%<br>
+                            <span>F-Measure</span>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                              </div>
+                            </div>
+                            <div class="col-lg-6 align-self-center">
+                              <div class="right-image">
+                                                    <canvas id="myChart8" style="width:100%;max-width:600px"></canvas>
+                               <script>
+var xValues = ["CWE-787", "CWE-79", "CWE-89", "CWE-20", "CWE-125","CWE-78", "CWE-416", "CWE-22", "CWE-352", "CWE-434","CWE-476", "CWE-502", "CWE-190", "CWE-287", "CWE-798","CWE-77", "CWE-306", "CWE-119", "CWE-276", "CWE-918","CWE-362", "CWE-400", "CWE-611", "CWE-94",];
+var yValues = [1402, 2211, 592, 657, 769,467,390,457,418,263,203,171,196,278,174,256,127,222,159,224,153,140,193,117,96];
+var barColors = ["blue", "blue","blue","blue","blue","blue", "blue","blue","blue","blue","blue", "blue","blue","blue","blue","blue", "blue","blue","blue","blue","blue"];
+
+new Chart("myChart8", {
+  type: "bar",
+  data: {
+    labels: xValues,
+    datasets: [{
+      backgroundColor: barColors,
+      data: yValues
+    }]
+  },
+  options: {
+    legend: {display: false},
+    title: {
+      display: true,
+      text: "2020"
+    }
+  }
+});
+</script>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </li>
+                    <li>
+                    <div>
+                        <div class="thumb">
+                          <div class="row">
+                            <div class="col-lg-6 align-self-center">
+                              <div class="left-text">
+                                <h4>Vulnerabilities 2021 </h4>
+                                <p>We collected the most popular and most dangerous CWE of 2021 and got</p>
+                                <div class="ticks-list"><span><i class="fa fa-check"></i> 11678 vulnerabilities</span> <span><i class="fa fa-check"></i> 25 label</span><span><i class="fa fa-check"></i> 41622 vulnerable products versions</span> </div>
+                                <p></p>
+                                    <div class="row">
+                  <div class="col-lg-4 col-sm-4">
+                    <div class="skill-item first-skill-item wow fadeIn" data-wow-duration="1s" data-wow-delay="0s">
+                      <div class="progress" data-percentage="80">
+                        <span class="progress-left">
+                          <span class="progress-bar"></span>
+                        </span>
+                        <span class="progress-right">
+                          <span class="progress-bar"></span>
+                        </span>
+                        <div class="progress-value">
+                          <div>
+                            80%<br>
+                            <span>precision</span>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="col-lg-4 col-sm-4">
+                    <div class="skill-item second-skill-item wow fadeIn" data-wow-duration="1s" data-wow-delay="0s">
+                      <div class="progress" data-percentage="80">
+                        <span class="progress-left">
+                          <span class="progress-bar"></span>
+                        </span>
+                        <span class="progress-right">
+                          <span class="progress-bar"></span>
+                        </span>
+                        <div class="progress-value">
+                          <div>
+                            80%<br>
+                            <span>recall</span>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="col-lg-4 col-sm-4">
+                    <div class="skill-item third-skill-item wow fadeIn" data-wow-duration="1s" data-wow-delay="0s">
+                      <div class="progress" data-percentage="80">
+                        <span class="progress-left">
+                          <span class="progress-bar"></span>
+                        </span>
+                        <span class="progress-right">
+                          <span class="progress-bar"></span>
+                        </span>
+                        <div class="progress-value">
+                          <div>
+                            79.7%<br>
+                            <span>F-Measure</span>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                              </div>
+                            </div>
+                            <div class="col-lg-6 align-self-center">
+                              <div class="right-image">
+                                                               <canvas id="myChart9" style="width:100%;max-width:600px"></canvas>
+                               <script>
+var xValues = ["CWE-787", "CWE-79", "CWE-89", "CWE-20", "CWE-125","CWE-78", "CWE-416", "CWE-22", "CWE-352", "CWE-434","CWE-476", "CWE-502", "CWE-190", "CWE-287", "CWE-798","CWE-77", "CWE-306", "CWE-119", "CWE-276", "CWE-918","CWE-362", "CWE-400", "CWE-611", "CWE-94",];
+var yValues = [1400, 2467, 669, 712, 667,315,607,492,376,292,393,201,244,421,152,198,427,66,281,177,156,118,278,113,155];
+var barColors = ["blue", "blue","blue","blue","blue","blue", "blue","blue","blue","blue","blue", "blue","blue","blue","blue","blue", "blue","blue","blue","blue","blue"];
+
+new Chart("myChart9", {
+  type: "bar",
+  data: {
+    labels: xValues,
+    datasets: [{
+      backgroundColor: barColors,
+      data: yValues
+    }]
+  },
+  options: {
+    legend: {display: false},
+    title: {
+      display: true,
+      text: "2021"
+    }
+  }
+});
+</script>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </li>
+                    <li>
+                    <div>
+                        <div class="thumb">
+                          <div class="row">
+                            <div class="col-lg-6 align-self-center">
+                              <div class="left-text">
+                                <h4>Vulnerabilities 2022 </h4>
+                                <p>We collected the most popular and most dangerous CWE of 2022 and got</p>
+                                <div class="ticks-list"><span><i class="fa fa-check"></i> 4278 vulnerabilities</span> <span><i class="fa fa-check"></i> 25 label</span><span><i class="fa fa-check"></i> 16113 vulnerable products versions</span> </div>
+                                <p></p>
+                                    <div class="row">
+                  <div class="col-lg-4 col-sm-4">
+                    <div class="skill-item first-skill-item wow fadeIn" data-wow-duration="1s" data-wow-delay="0s">
+                      <div class="progress" data-percentage="90">
+                        <span class="progress-left">
+                          <span class="progress-bar"></span>
+                        </span>
+                        <span class="progress-right">
+                          <span class="progress-bar"></span>
+                        </span>
+                        <div class="progress-value">
+                          <div>
+                            84.3%<br>
+                            <span>precision</span>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="col-lg-4 col-sm-4">
+                    <div class="skill-item second-skill-item wow fadeIn" data-wow-duration="1s" data-wow-delay="0s">
+                      <div class="progress" data-percentage="80">
+                        <span class="progress-left">
+                          <span class="progress-bar"></span>
+                        </span>
+                        <span class="progress-right">
+                          <span class="progress-bar"></span>
+                        </span>
+                        <div class="progress-value">
+                          <div>
+                            81.7%<br>
+                            <span>recall</span>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="col-lg-4 col-sm-4">
+                    <div class="skill-item third-skill-item wow fadeIn" data-wow-duration="1s" data-wow-delay="0s">
+                      <div class="progress" data-percentage="80">
+                        <span class="progress-left">
+                          <span class="progress-bar"></span>
+                        </span>
+                        <span class="progress-right">
+                          <span class="progress-bar"></span>
+                        </span>
+                        <div class="progress-value">
+                          <div>
+                            81.4%<br>
+                            <span>F-Measure</span>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                              </div>
+                            </div>
+                            <div class="col-lg-6 align-self-center">
+                              <div class="right-image">
+                                                                                            <canvas id="myChart10" style="width:100%;max-width:600px"></canvas>
+                               <script>
+var xValues = ["CWE-787", "CWE-79", "CWE-89", "CWE-20", "CWE-125","CWE-78", "CWE-416", "CWE-22", "CWE-352", "CWE-434","CWE-476", "CWE-502", "CWE-190", "CWE-287", "CWE-798","CWE-77", "CWE-306", "CWE-119", "CWE-276", "CWE-918","CWE-362", "CWE-400", "CWE-611", "CWE-94",];
+var yValues =[445, 941, 634, 172, 182,91,193,156,192,143,82,32,80,123,46,88,153,34,42,50,73,63,104,36,70];
+var barColors = ["blue", "blue","blue","blue","blue","blue", "blue","blue","blue","blue","blue", "blue","blue","blue","blue","blue", "blue","blue","blue","blue","blue"];
+
+new Chart("myChart10", {
+  type: "bar",
+  data: {
+    labels: xValues,
+    datasets: [{
+      backgroundColor: barColors,
+      data: yValues
+    }]
+  },
+  options: {
+    legend: {display: false},
+    title: {
+      display: true,
+      text: "2022"
+    }
+  }
+});
+</script>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </li>
+                    <li>
+                  </ul>
+                </div>          
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+
+
+
+
+
+
+
+
+  <div id="services" class="services section">
+    <div class="container">
+      <div class="row">
+        <div id="d8"></div>
+        <div class="col-lg-12" >
+          <div class="section-heading  wow fadeInDown" data-wow-duration="1s" data-wow-delay="0.5s" >
+            <h6>Get Started</h6>
+            <h4>Write your   <em>Security Report</em></h4>
+            <div class="line-dec"></div>
+          </div>
+        </div>
+         <div id="d2">
+<center>
+
+    <form method ="POST" , id="form1">
+
+        <textarea placeholder="..." cols="150" rows="11" name='a' id="a2" required></textarea>
+        <br>
+
+        <input type="submit">
+        <input type="reset" value="Clear">
+
+
+
+<div id="response"></div>
+
+
+
+
+
+    </form>
+  <script>
+        document.getElementById('form1').addEventListener('submit',getData);
+        function getData(e){
+            e.preventDefault();
+
+            var name = document.getElementById('a2').value;
+            var params = {user_input:name};
+            var xhr= new XMLHttpRequest();
+
+            xhr.open('post', '../output', true);
+            xhr.setRequestHeader('Content-type','application/json');
+
+            xhr.onload = function(){
+                console.log('Reached');
+                document.getElementById('response').innerHTML=this.responseText;
+
+            }
+
+            xhr.send(JSON.stringify(params));
+
+        }
+    </script>
+
+
+      </div>
+
+    </div>
+  </div>
+
+
+
+
+
+  <div id="portfolio" class="our-portfolio section">
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-5">
+          <div class="section-heading wow fadeInLeft" data-wow-duration="1s" data-wow-delay="0.3s">
+            <h6></h6>
+            <h4><em>VrT Results </em> </h4>
+            <h4>Random vulnerabilities</h4>
+            <div class="line-dec"></div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <center>
+    <div id="d3">
+
+        <table>
+            <thead>
+            <td>Description</td>
+                        <td>CWE</td>
+
+                        <td>Precision</td>
+
+            </thead>
+            <tr>
+                <td>Adobe acrobat reader earlier out of bounds write vulnerability successful exploitation could lead arbitrary code execution.</td>
+                <td>CWE-209</td>
+                <td>100%</td>
+            </tr>
+            <tr>
+                <td>Prosody allows uncontrolled cpu consumption via flood ssl tls renegotiation requests. </td>
+                <td>CWE-400</td>
+                <td>99%</td>
+            </tr>
+              <tr>
+                <td>Null pointer dereference suitelink  server processing command.</td>
+                <td>CWE-476</td>
+                <td>100%</td>
+            </tr>
+              <tr>
+                <td>The upSQL funcation action admn dataaction class PHP gxlcms allow remote attackers execute arbitray SQl statements via SQL parmeter consequently attacker execute arbitrary PHP code placing PHP substring using into outfile PHP file name</td>
+                <td>CWE-89</td>
+                <td>90%</td>
+            </tr>
+
+          <tr>
+                <td>In android earlier security patch level qualcomm snapdragon mobile integer overflow buffer.</td>
+                <td>CWE-190</td>
+                <td>99%</td>
+            </tr>
+
+          <tr>
+                <td>Laobancms allows inst all mySQL hi PHP riqi directory traversal.</td>
+                <td>CWE-22</td>
+                <td>100%</td>
+            </tr>
+
+          <tr>
+                <td>The wp retina plugin wordpress xss.</td>
+                <td>CWE-79</td>
+                <td>100%</td>
+            </tr>
+
+          <tr>
+                <td>Lute tab buffer overflow pdf print</td>
+                <td>CWE-119</td>
+                <td>100%</td>
+            </tr>
+
+
+          <tr>
+                <td>Sugarcrm allows PHP code injection emails module regular user.</td>
+                <td>CWE-94</td>
+                <td>100%</td>
+            </tr>
+
+
+          <tr>
+                <td>In prest ashop reflected date from date to parameters dashboard page this problem fixed.</td>
+                <td>CWE-79</td>
+                <td>95%</td>
+            </tr>
+
+          <tr>
+                <td>Server side request forgery  github repository jgraph drawio.</td>
+                <td>CWE-918</td>
+                <td>100%</td>
+            </tr>
+
+
+
+          <tr>
+                <td>The ltp parser tcpdump buffer over read print ltp several funcations.</td>
+                <td>CWE-125</td>
+                <td>100%</td>
+            </tr>
+
+          <tr>
+                <td>SQL injection vulnerability metinfo beta index PHP.</td>
+                <td>CWE-89</td>
+                <td>100%</td>
+            </tr>
+
+
+
+
+
+
+
+
+        </table>
+
+    </div>
+      </center>
+
+    <div id="d3"><br></div>
+    <div id="d3"><br></div>
+
+
+
+
+
+  
+
+
+
+  <!-- Scripts -->
+
+  <script type="text/javascript" src="{{ url_for('static',filename='jquery.min.js')}}"></script>
+  <script type="text/javascript" src="{{ url_for('static',filename='bootstrap.bundle.min.js')}}"></script>
+  <script type="text/javascript" src="{{ url_for('static',filename='owl-carousel.js')}}"></script>
+  <script type="text/javascript" src="{{ url_for('static',filename='animation.js')}}"></script>
+  <script type="text/javascript" src="{{ url_for('static',filename='imagesloaded.js')}}"></script>
+  <script type="text/javascript" src="{{ url_for('static',filename='custom.js')}}"></script>
+
+
+</body>
+</html>
