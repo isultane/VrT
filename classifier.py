@@ -41,7 +41,7 @@ def parse_labels(testfile):
 
 if __name__ == '__main__':
     
-    data_set = './test/'
+    data_set = './vuln_data/'
 
     for file in os.listdir(data_set):
         print('Processing ' + file)

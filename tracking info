@@ -1,0 +1,6 @@
+[11102022] the code is complete and cross validation is tested!
+[08112022] I have tested my code on two examples:
+1- temp file (took the first 15K from the big NVD file) contain 58 unique lables, and I got the accuracy as (F1= 0.87, P=0.88, and R=0.91)
+2- 2018.txt data (size is ~15K as well) contain 162 unique lables, and I got the accuracy as (F1=0.69, P=073, R=0.70). 
+So, I have reached to an observation based on my findings and analysis of the NVD using fasttext tool, once the number of unique labels is high, the accuracy will be decreases. 
+while if the number of unique labels is low the accuracy will be increase. 
