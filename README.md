@@ -1,2 +1,2 @@
 ## Vulnerabilities Reports Tagger
-TBC
+In vulnerability databases, security engineers report vulnerability reports or potential software threats, manage them, and track their progress. But as useful as they might be, many security engineers still end up with a rapidly growing workload and lose control of it. Our work aims to help security engineers improve their vulnerability processing effectiveness by automating the vulnerability labeling process on NVD. To pursue this goal, we developed a Vulnerability Reports Tagger tool. 
