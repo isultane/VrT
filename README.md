@@ -1,2 +1,2 @@
-## Security Ticket Tagger
+## Vulnerabilities Reports Tagger
 TBC
