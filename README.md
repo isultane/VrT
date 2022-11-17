@@ -4,5 +4,5 @@ In vulnerability databases, security engineers report vulnerability reports or p
 
 # installation
 Visit our VrT website from the link: http://vulnerabilitiesreportstagger.com/VrT/
-Or you can scaning the QRcode
-![qrcode](https://user-images.githubusercontent.com/60845044/202493758-a9ad600d-b87c-44f3-a5e8-03b8b39be8ad.png)
+
+
