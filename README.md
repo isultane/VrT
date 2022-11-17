@@ -8,4 +8,4 @@ Visit our VrT website from the link: http://vulnerabilitiesreportstagger.com/VrT
 
 # get started:
 first you have to download the requirements
-- '$ pip install -r requirements.txt'
+- `$ pip install -r requirements.txt`
