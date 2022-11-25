@@ -13,6 +13,24 @@ from nltk.stem.porter import PorterStemmer
 from nltk.tokenize import word_tokenize
 
 from collections import Counter
+def extract_top_25_cwes():
+    dataset = './vuln_data/'
+    for file in os.listdir(dataset):
+        print('Processing ' + file)
+        top25cwesource = open('top25cwe.txt', 'r')  
+        for top25cwe in top25cwesource.readlines():
+            cwe = top25cwe.split(None, 1)[0]
+            cvesource = open(dataset+file, 'r+', encoding="UTF-8")
+            data = cvesource.readlines()
+            top25cwe_out = open('./vuln_data_top25cwe/'+str(file)+'top25cwe.txt', 'a')
+            for line in data:
+                label, text = line.split(' ', 1)
+                oldcwe = label.split('__')[2]
+                if oldcwe == cwe:
+                    top25cwe_out.write(label + " " + text)
+            cvesource.close()
+            top25cwe_out.close()
+    top25cwesource.close()
 
 def count_unique_labels():
     data_set = './test/'
