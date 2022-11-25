@@ -41,7 +41,7 @@ def parse_labels(testfile):
 
 if __name__ == '__main__':
     
-    data_set = './vuln_data/'
+    data_set = './test/'
 
     for file in os.listdir(data_set):
         print('Processing ' + file)
@@ -50,6 +50,8 @@ if __name__ == '__main__':
         
         path_train = './tmp/tmp_train.txt'
         path_test = './tmp/tmp_test.txt'
+
+        model_fn = './vrt_model.bin'
         try:
             print("Converting dataset to array")
             f = open(data_set+file, 'r+', encoding="UTF-8")
@@ -95,14 +97,14 @@ if __name__ == '__main__':
                 y_true = parse_labels(path_test)
                 y_pred = predict_labels(path_test, model)
             
-         
+
                 # Print the precision and recall, among other metrics
                 report = metrics.classification_report(y_true, y_pred, digits=3, zero_division=1, output_dict=True)       
             
                 precision = report['weighted avg']['precision']
                 recall = report['weighted avg']['recall'] 
                 f_score = report['weighted avg']['f1-score']
-           
+
                 result = {
                     '10-Fold iteration:': fold,
                     'F1': f_score,
@@ -114,6 +116,12 @@ if __name__ == '__main__':
                 print(json.dumps(result, indent=4))
                 fold_outputs.append(result)
                 fold += 1
+
+                # save best fold_model.bin for testing
+                if f_score >= result["F1"]:
+                    if os.path.exists(model_fn):
+                        os.remove(model_fn)
+                    model.save_model(model_fn)
             print("Done with 10 fold validation")
             # calculate over-all results
             mean_recall = 0
@@ -139,6 +147,7 @@ if __name__ == '__main__':
             o = open(f_out, 'w', encoding="UTF-8")
             o.write(dump)
             o.close()
+
         except Exception as e:
             print("An Error occurred")
             print(str(e))

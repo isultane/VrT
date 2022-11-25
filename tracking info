@@ -4,3 +4,4 @@
 2- 2018.txt data (size is ~15K as well) contain 162 unique lables, and I got the accuracy as (F1=0.69, P=073, R=0.70). 
 So, I have reached to an observation based on my findings and analysis of the NVD using fasttext tool, once the number of unique labels is high, the accuracy will be decreases. 
 while if the number of unique labels is low the accuracy will be increase. 
+[25112022] extrcting model.bin from each year after preprocess top 25 CWEs
