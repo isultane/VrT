@@ -32,6 +32,17 @@ def extract_top_25_cwes():
             top25cwe_out.close()
     top25cwesource.close()
 
+    # merge all resultsd files into one
+    top25cwedataset = './vuln_data_top25cwe/'
+    to25cwe_files = os.listdir(top25cwedataset)
+    with open('alltop25cwe.txt', 'w') as outfile:
+        for fname in to25cwe_files:
+            with open(top25cwedataset+fname) as infile:
+                for line in infile:
+                    outfile.write(line)
+
+
+
 def count_unique_labels():
     data_set = './test/'
     print("Number of labels: ")
