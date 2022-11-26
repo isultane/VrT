@@ -48,125 +48,127 @@ def generate_model(path_train):
         'lrUpdateRate': 1000,
         'epoch': 25,
         'wordNgrams': 2,
-        'loss': 'ova'
+        'loss': 'ova',
         }
     model = fasttext.train_supervised(**fasttext_params)  
-    model.save_model("vrt_top25model.bin")
+    model.quantize(input= path_train, retrain=True)
+    # model.save_model("vrt_test_top25model.bin")
+    model.save_model("vrt_test_top25model.ftz")
 
 
 if __name__ == '__main__':
     # extract_top_25_cwes()
-    # generate_model('./vuln_data_top25cwe/alltop25cwe.txt')
+    generate_model('./vuln_data_top25cwe/preprocessed_2012.texttop25cwe.txt')
 
-    data_set = './vuln_data_top25cwe/'
+    # data_set = './vuln_data_top25cwe/'
 
-    for file in os.listdir(data_set):
-        print('Processing ' + file)
+    # for file in os.listdir(data_set):
+    #     print('Processing ' + file)
 
-        f_out = './out_'+file
+    #     f_out = './out_'+file
         
-        path_train = './tmp/tmp_train.txt'
-        path_test = './tmp/tmp_test.txt'
+    #     path_train = './tmp/tmp_train.txt'
+    #     path_test = './tmp/tmp_test.txt'
 
-        try:
-            print("Converting dataset to array")
-            f = open(data_set+file, 'r+', encoding="UTF-8")
-            data = array(f.readlines())
-            f.close()
+    #     try:
+    #         print("Converting dataset to array")
+    #         f = open(data_set+file, 'r+', encoding="UTF-8")
+    #         data = array(f.readlines())
+    #         f.close()
 
-            # array for details
-            fold_outputs = []
+    #         # array for details
+    #         fold_outputs = []
 
-            # 10 fold loop
-            kfold = KFold(10, shuffle=True, random_state=1)
-            fold = 1
-            # the following portion of this code is modified verion from this reference:
-            # https://github.com/ChristianBirchler/ticket-tagger-analysis/blob/main/code-pipeline/classifiers/classifier.py
-            for train, test in kfold.split(data):
-                print("New tenfold iteration:", str(fold), "-----------------------------------------")
-                print("Creating train file")
-                tmp_train = open(path_train, "w", encoding="UTF-8")
-                for line in data[train]:
-                    tmp_train.write("".join(line))
-                tmp_train.close()
+    #         # 10 fold loop
+    #         kfold = KFold(10, shuffle=True, random_state=1)
+    #         fold = 1
+    #         # the following portion of this code is modified verion from this reference:
+    #         # https://github.com/ChristianBirchler/ticket-tagger-analysis/blob/main/code-pipeline/classifiers/classifier.py
+    #         for train, test in kfold.split(data):
+    #             print("New tenfold iteration:", str(fold), "-----------------------------------------")
+    #             print("Creating train file")
+    #             tmp_train = open(path_train, "w", encoding="UTF-8")
+    #             for line in data[train]:
+    #                 tmp_train.write("".join(line))
+    #             tmp_train.close()
 
-                print("Creating test file")
-                tmp_test = open(path_test, "w", encoding="UTF-8")
-                for line in data[test]:
-                    tmp_test.write("".join(line))
-                tmp_test.close()
+    #             print("Creating test file")
+    #             tmp_test = open(path_test, "w", encoding="UTF-8")
+    #             for line in data[test]:
+    #                 tmp_test.write("".join(line))
+    #             tmp_test.close()
 
             
-                print("start training...")
+    #             print("start training...")
             
-                fasttext_params = {
-                    'input': path_train,
-                    'lr': 0.90,
-                    'lrUpdateRate': 1000,
-                    'epoch': 25,
-                    'wordNgrams': 2,
-                    'loss': 'ova'
-                }
-                model = fasttext.train_supervised(**fasttext_params)  
+    #             fasttext_params = {
+    #                 'input': path_train,
+    #                 'lr': 0.90,
+    #                 'lrUpdateRate': 1000,
+    #                 'epoch': 25,
+    #                 'wordNgrams': 2,
+    #                 'loss': 'ova'
+    #             }
+    #             model = fasttext.train_supervised(**fasttext_params)  
             
-                print("start testing...")
-                y_true = parse_labels(path_test)
-                y_pred = predict_labels(path_test, model)
+    #             print("start testing...")
+    #             y_true = parse_labels(path_test)
+    #             y_pred = predict_labels(path_test, model)
             
 
-                # Print the precision and recall, among other metrics
-                report = metrics.classification_report(y_true, y_pred, digits=3, zero_division=1, output_dict=True)       
+    #             # Print the precision and recall, among other metrics
+    #             report = metrics.classification_report(y_true, y_pred, digits=3, zero_division=1, output_dict=True)       
             
-                precision = report['weighted avg']['precision']
-                recall = report['weighted avg']['recall'] 
-                f_score = report['weighted avg']['f1-score']
+    #             precision = report['weighted avg']['precision']
+    #             recall = report['weighted avg']['recall'] 
+    #             f_score = report['weighted avg']['f1-score']
 
-                result = {
-                    '10-Fold iteration:': fold,
-                    'F1': f_score,
-                    'Recall': recall,
-                    'Precision': precision
-                }
-                # log
-                print("Fold over, here are results: ")
-                print(json.dumps(result, indent=4))
-                fold_outputs.append(result)
-                fold += 1
-            print("Done with 10 fold validation")
-            # calculate over-all results
-            mean_recall = 0
-            mean_precision = 0
-            mean_f1 = 0
-            for f in fold_outputs:
-                mean_f1 += (f['F1'] / 10)
-                mean_recall += (f['Recall'] / 10)
-                mean_precision += (f['Precision'] / 10)
-                # compile results as json
-            output = {
-                'Results': {
-                    'F1': mean_f1,
-                    'Recall': mean_recall,
-                    'Precision': mean_precision
-                },
-                'Details': fold_outputs
-            }
-            dump = json.dumps(output, indent=4)
-            print(dump)
-            # write to output
-            print("Writing output to file")
-            o = open(f_out, 'w', encoding="UTF-8")
-            o.write(dump)
-            o.close()
+    #             result = {
+    #                 '10-Fold iteration:': fold,
+    #                 'F1': f_score,
+    #                 'Recall': recall,
+    #                 'Precision': precision
+    #             }
+    #             # log
+    #             print("Fold over, here are results: ")
+    #             print(json.dumps(result, indent=4))
+    #             fold_outputs.append(result)
+    #             fold += 1
+    #         print("Done with 10 fold validation")
+    #         # calculate over-all results
+    #         mean_recall = 0
+    #         mean_precision = 0
+    #         mean_f1 = 0
+    #         for f in fold_outputs:
+    #             mean_f1 += (f['F1'] / 10)
+    #             mean_recall += (f['Recall'] / 10)
+    #             mean_precision += (f['Precision'] / 10)
+    #             # compile results as json
+    #         output = {
+    #             'Results': {
+    #                 'F1': mean_f1,
+    #                 'Recall': mean_recall,
+    #                 'Precision': mean_precision
+    #             },
+    #             'Details': fold_outputs
+    #         }
+    #         dump = json.dumps(output, indent=4)
+    #         print(dump)
+    #         # write to output
+    #         print("Writing output to file")
+    #         o = open(f_out, 'w', encoding="UTF-8")
+    #         o.write(dump)
+    #         o.close()
 
-        except Exception as e:
-            print("An Error occurred")
-            print(str(e))
-            traceback.print_exc()
-        # in any case delete existing temporary files
-        finally:
-            print("Deleting tmp files")
-            if os.path.exists(path_train):
-                os.remove(path_train)
-            if os.path.exists(path_test):
-                os.remove(path_test)
-            print("Exit.")
+    #     except Exception as e:
+    #         print("An Error occurred")
+    #         print(str(e))
+    #         traceback.print_exc()
+    #     # in any case delete existing temporary files
+    #     finally:
+    #         print("Deleting tmp files")
+    #         if os.path.exists(path_train):
+    #             os.remove(path_train)
+    #         if os.path.exists(path_test):
+    #             os.remove(path_test)
+    #         print("Exit.")
